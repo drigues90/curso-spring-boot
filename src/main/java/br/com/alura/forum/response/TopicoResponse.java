@@ -12,9 +12,16 @@ public class TopicoResponse {
 	private String titulo;
 	private String mensagem;
 	private LocalDateTime dataCriacao;
+	
+	public TopicoResponse(Topico topico) {
+		this.id = topico.getId();
+		this.titulo = topico.getTitulo();
+		this.mensagem = topico.getMensagem();
+		this.dataCriacao = topico.getDataCriacao();
+	}
 
 	public TopicoResponse(Long id, String titulo, String mensagem, LocalDateTime dataCriacao) {
-		super();
+		this.id = id;
 		this.titulo = titulo;
 		this.mensagem = mensagem;
 		this.dataCriacao = dataCriacao;
