@@ -12,8 +12,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import br.com.alura.forum.request.TopicoRequest;
 
 @Entity
 public class Topico {
@@ -130,6 +133,11 @@ public class Topico {
 
 	public void setRespostas(List<Resposta> respostas) {
 		this.respostas = respostas;
+	}
+
+	public void atualizar(@Valid TopicoRequest request) {
+		this.titulo = request.getTitulo();
+		this.mensagem = request.getMensagem();
 	}
 
 }

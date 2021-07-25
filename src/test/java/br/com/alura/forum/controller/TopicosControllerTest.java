@@ -48,10 +48,10 @@ public class TopicosControllerTest {
 	}
 	
 	@Test
-	public void deveRetornar201AoCadastrarTopico() throws Exception {
+	public void deveRetornar201AoCadastrarTopicoValido() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.post(uri)
 				.contentType(MediaType.APPLICATION_JSON)
-				.content(new ObjectMapper().writeValueAsString(new TopicoRequest("Testando","Spring boot","valeo papai")))
+				.content(new ObjectMapper().writeValueAsString(new TopicoRequest("Testando","mensagem teste","Spring Boot")))
 				).andExpect(status().isCreated());
 	}
 
